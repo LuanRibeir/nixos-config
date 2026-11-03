@@ -1,0 +1,60 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 0,
+
+  "modules-left": ["custom/applauncher", "sway/workspaces", "sway/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "pkill wofi || wofi --show drun --location=top -y 15",
+    "tooltip": false
+  },
+
+  "sway/workspaces": {
+    "format": "{name}",
+    "disable-scroll": true
+  },
+
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 50
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%Y.%m.%d // %H:%M:%S}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+
+  "pulseaudio": {
+    "format": "音量 {volume}%",
+    "format-muted": "音量 MUTE",
+    "on-click": "pamixer -t",
+    "tooltip": false
+  },
+
+  "network": {
+    "format-ethernet": "LINK {ipaddr}",
+    "format-wifi": "WIFI {essid}",
+    "format-disconnected": "NO SIGNAL",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "CPU {usage}%"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "MEM {percentage}%"
+  },
+
+  "tray": {
+    "spacing": 8
+  }
+}

@@ -1,11 +1,11 @@
 { ... }:
 {
-  flake.modules.homeManager.fish = { pkgs, ... }: {
+  flake.modules.homeManager.fish = { ... }: {
     programs.fish = {
       enable = true;
       shellAliases = {
         ll = "ls -lah";
-        nrsf = "sudo nixos-rebuild switch --flake ~/nixos-config#cherubim";
+        nrsf = "git -C ~/nixos-config add -A && sudo nixos-rebuild switch --flake ~/nixos-config#(hostname)";
       };
       shellAbbrs = {
         gs = "git status";
@@ -20,5 +20,9 @@
     programs.starship.enable = true;
     programs.fzf.enable = true;
     programs.zoxide.enable = true;
+  };
+
+  flake.modules.nixos.fish = {
+    programs.fish.enable = true;
   };
 }

@@ -8,14 +8,9 @@ in
       ./_hardware-configuration.nix
 
       nixos.base
-      nixos.audio
-      nixos.graphics
-      nixos.sway
-      nixos.firefox
+      nixos.luan
+      nixos.desktop
       nixos.ssh
-      nixos.git
-      nixos.fonts
-      nixos.home-manager
 
       {
         networking.hostName = "cherubim";

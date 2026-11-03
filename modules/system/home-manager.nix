@@ -6,12 +6,7 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      users.luan.imports = [
-        config.flake.modules.homeManager.base
-        config.flake.modules.homeManager.sway
-	config.flake.modules.homeManager.fish
-	config.flake.modules.homeManager.fonts
-      ];
+      backupFileExtension = "bak";
     };
   };
 }

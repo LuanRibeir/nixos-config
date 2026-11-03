@@ -22,13 +22,7 @@
     };
   };
   
-  flake.modules.homeManager.fonts = { config, ... }:
-   let
-    dotfiles = "${config.home.homeDirectory}/nixos-config/modules/features/_files";
-    mkSymlink = path:
-      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
-   in
-   {
-    xdg.dataFile."fonts".source = mkSymlink "fonts";
-   };
+  flake.modules.homeManager.fonts = { mkSymlink, ... }: {
+    xdg.dataFile."fonts".source = mkSymlink "system/fonts/_files";
+  };
 }

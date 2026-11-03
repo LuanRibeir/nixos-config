@@ -39,7 +39,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      vim wget curl btop tree unzip ripgrep fd fastfetch
+      vim wget curl btop tree unzip ripgrep fd fastfetch bat swappy slurp
     ];
   };
 }

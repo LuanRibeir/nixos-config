@@ -14,6 +14,8 @@ in
       nixos.firefox
       nixos.ssh
       nixos.git
+      nixos.fonts
+      nixos.home-manager
 
       {
         networking.hostName = "cherubim";
